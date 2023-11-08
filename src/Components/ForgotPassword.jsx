@@ -8,6 +8,10 @@ const ForgotPassword = () => {
   const irLogin = () => {
     navigate('/');
   };
+  const alerta = () => {
+    alert('Estamos trabajando en ello');
+    navigate('/login');
+  };
   return (
     <main className="flex justify-center bg-[#52cef5]">
       <div className="flex items-center h-screen justify-center">
@@ -35,7 +39,10 @@ const ForgotPassword = () => {
                 />
               </div>
             </div>
-            <ButtonResetPassword label={'Cambiar contraseña'} />
+            <ButtonResetPassword
+              fnCambiarContraseña={alerta}
+              label={'Cambiar contraseña'}
+            />
           </form>
         </section>
       </div>

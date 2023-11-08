@@ -18,6 +18,9 @@ const FormLogin = () => {
   const irHome = () => {
     navigate('/');
   };
+  const irPassword = () => {
+    navigate('/forgotpassword');
+  };
   const iniciarSesion = async (e) => {
     e.preventDefault();
     const endPoint = Constantes.URL_BASE + '/usuarios/login';
@@ -92,8 +95,8 @@ const FormLogin = () => {
                 />
               </div>
               <a
-                className="password-recover"
-                href="http://localhost:5173/forgotpassword"
+                className="password-recover cursor-pointer"
+                onClick={irPassword}
               >
                 Recuperar contraseña
               </a>
