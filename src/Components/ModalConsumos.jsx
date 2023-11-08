@@ -16,6 +16,7 @@ const Modalconsumos = ({
   const [ConsuEnergi, setConsuEnergi] = useState('');
   const [NumPiso, setNumPiso] = useState('');
   const [fecha, setFecha] = useState('');
+  const token = localStorage.getItem('token');
   const endPoint = isUpdating //si isUpdating se va al consumo de update, sino al de create
     ? Constantes.URL_BASE + '/consumos/actualizar/'
     : Constantes.URL_BASE + '/consumos/nuevos';

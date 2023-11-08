@@ -13,7 +13,7 @@ const UserDropdown = () => {
       <NavDropdown
         title={<img src={usericon} alt="user poto" className="w-11 h-11" />}
       >
-        <NavDropdown.Item href="http://localhost:5173/">
+        <NavDropdown.Item href="http://89.116.25.43:3271/">
           Cerrar sesión
         </NavDropdown.Item>
       </NavDropdown>

@@ -31,6 +31,8 @@ const FormLogin = () => {
       .post(endPoint, data)
       .then((resp) => {
         console.log(resp);
+        localStorage.setItem('token', resp.data.jwt);
+        localStorage.setItem('user', usuario);
         navigate('/dashboard');
       })
       .catch((error) => {
