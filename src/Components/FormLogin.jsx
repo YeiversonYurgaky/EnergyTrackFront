@@ -21,6 +21,7 @@ const FormLogin = () => {
   const irPassword = () => {
     navigate('/forgotpassword');
   };
+
   const iniciarSesion = async (e) => {
     e.preventDefault();
     const endPoint = Constantes.URL_BASE + '/usuarios/login';
@@ -34,7 +35,6 @@ const FormLogin = () => {
       .post(endPoint, data)
       .then((resp) => {
         console.log(resp);
-        localStorage.setItem('token', resp.data.jwt);
         localStorage.setItem('user', usuario);
         navigate('/dashboard');
       })
