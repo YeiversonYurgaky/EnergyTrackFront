@@ -128,7 +128,7 @@ const ConsumptionList = () => {
 
   return (
     <div className="p-2">
-      <Table striped bordered hover variant="dark" size="lg">
+      <Table striped bordered hover variant="ligth" size="lg">
         <thead>
           <tr>
             <th>Dato</th>
