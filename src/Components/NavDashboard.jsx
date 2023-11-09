@@ -7,9 +7,10 @@ import logo from '../assets/logo.png';
 import usericon from '../assets/userIcon.png';
 
 const UserDropdown = () => {
+  const usuario = localStorage.getItem('user');
   return (
     <div className="flex items-center">
-      <label className="text-white font-semibold ">Usuario</label>
+      <label className="text-white font-semibold ">{usuario}</label>
       <NavDropdown
         title={<img src={usericon} alt="user poto" className="w-11 h-11" />}
       >
