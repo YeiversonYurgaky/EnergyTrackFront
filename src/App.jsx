@@ -29,6 +29,8 @@ function App() {
     // Procesar el inicio de sesión
     // Por ejemplo, después de verificar las credenciales, establecer el estado de autenticación en verdadero
     localStorage.setItem('isUserAuthenticated', 'true');
+
+    window.location.href = '/dashboard';
   };
 
   // Lógica de cierre de sesión
