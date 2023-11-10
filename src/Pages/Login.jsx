@@ -1,10 +1,10 @@
 import React from 'react';
 import FormLogin from '../Components/FormLogin';
 
-const Login = ({ handleLoginBackend }) => {
+const Login = () => {
   return (
     <div>
-      <FormLogin handleLoginBackend={handleLoginBackend} />
+      <FormLogin />
     </div>
   );
 };
