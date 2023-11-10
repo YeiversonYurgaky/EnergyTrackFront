@@ -37,6 +37,7 @@ const FormLogin = ({ handleLoginBackend }) => {
         console.log(resp);
         localStorage.setItem('user', data.usuario);
         handleLoginBackend(resp.data);
+        console.log(handleLoginBackend(resp.data));
         navigate('/dashboard');
       })
       .catch((error) => {

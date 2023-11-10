@@ -13,10 +13,13 @@ import Register from './Pages/Register';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Función de inicio de sesión que proviene de tu backend
   const handleLoginBackend = (data) => {
-    // Aquí, data representa la información de inicio de sesión recibida del backend
-    setIsLoggedIn(data.isLoggedIn); // Ajusta según tu implementación
+    // Verifica la respuesta del backend y actualiza isLoggedIn en consecuencia
+    if (data.isLoggedIn) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
   };
 
   return (
