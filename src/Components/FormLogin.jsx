@@ -59,7 +59,7 @@ const FormLogin = () => {
           <div className="mensajeBienvenida">
             <h1>Energy Track</h1>
             <p>
-              ¡Bienvenidos a <span>Energy Track</span> la platadorma inteligente
+              ¡Bienvenidos a <span>Energy Track</span> la plataforma inteligente
               para visualizar y analizar los consumos diarios de iluminación en
               el Bolivar Rave!
             </p>

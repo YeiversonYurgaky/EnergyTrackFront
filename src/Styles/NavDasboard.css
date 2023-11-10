@@ -2,8 +2,13 @@ a.dropdown-toggle.nav-link {
   display: flex;
 }
 
+th {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .dropdown-menu[data-bs-popper] {
   left: -95px;
-  background-color: #3730a3;
+  background-color: #1c4355;
   --bs-dropdown-link-color: white;
 }

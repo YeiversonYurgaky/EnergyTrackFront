@@ -127,11 +127,11 @@ const ConsumptionList = () => {
   };
 
   return (
-    <div className="p-2">
+    <div className="p-10 font-medium text-center">
       <Table striped bordered hover variant="ligth" size="lg">
         <thead>
           <tr>
-            <th>Dato</th>
+            <th className="font-bold">Dato</th>
             <th className="flex items-center justify-center gap-2">
               Fecha De Registro
               <div className="flex items-center justify-center">

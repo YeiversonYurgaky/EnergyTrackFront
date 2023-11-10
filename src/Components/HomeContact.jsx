@@ -3,7 +3,7 @@ import NavbarHome from './NavbarHome';
 
 const HomeContact = () => {
   return (
-    <main className="bg-white text-black h-screen">
+    <main className="bg-[#d3f5ff] text-black h-screen">
       <header>
         <NavbarHome />;
       </header>

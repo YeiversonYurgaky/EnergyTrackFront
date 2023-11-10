@@ -25,13 +25,13 @@ const HomePage = () => {
   };
 
   return (
-    <main className="bg-white text-black min-h-screen">
-      <header>
+    <main className="bg-[#d3f5ff] text-black min-h-screen">
+      <header className="mb-4">
         <NavbarHome />
       </header>
       <div className="p-4 flex items-center">
         <div className="flex flex-col gap-3 w-2/3 pr-8">
-          <h1 className="text-6xl font-bold">Bienvenido a EnergyTrack</h1>
+          <h1 className="text-[57px] font-bold">Bienvenido a EnergyTrack</h1>
           <p className="text-lg font-semibold">
             El ahorro de energía es crucial para reducir la huella ambiental y
             promover la sostenibilidad a largo plazo. Al implementar prácticas
@@ -50,7 +50,7 @@ const HomePage = () => {
             respetuoso con el medio ambiente y económicamente eficiente.
           </p>
         </div>
-        <div className="w-1/3 shadow-lg">
+        <div className="w-1/2 shadow-lg">
           <div
             id="carouselExampleIndicators"
             className="carousel slide"
@@ -62,21 +62,33 @@ const HomePage = () => {
                   slideIndex === 0 ? 'carousel-item active' : 'carousel-item'
                 }
               >
-                <img src={img1} className="d-block w-100" alt="imagen1" />
+                <img
+                  src={img1}
+                  className="d-block w-[700px] h-[400px] rounded"
+                  alt="imagen1"
+                />
               </div>
               <div
                 className={
                   slideIndex === 1 ? 'carousel-item active' : 'carousel-item'
                 }
               >
-                <img src={img2} className="d-block w-100" alt="imagen2" />
+                <img
+                  src={img2}
+                  className="d-block w-[700px] h-[400px] rounded"
+                  alt="imagen2"
+                />
               </div>
               <div
                 className={
                   slideIndex === 2 ? 'carousel-item active' : 'carousel-item'
                 }
               >
-                <img src={img3} className="d-block w-100" alt="imagen3" />
+                <img
+                  src={img3}
+                  className="d-block w-[700px] h-[400px] rounded"
+                  alt="imagen3"
+                />
               </div>
             </div>
             <button

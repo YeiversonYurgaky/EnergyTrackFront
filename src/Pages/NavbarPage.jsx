@@ -4,7 +4,7 @@ import NavDashboard from '../Components/NavDashboard';
 
 const NavbarPage = () => {
   return (
-    <div className="bg-white h-screen">
+    <div className="bg-[#d3f5ff] h-screen">
       <NavDashboard />
       <ConsumptionList />
     </div>

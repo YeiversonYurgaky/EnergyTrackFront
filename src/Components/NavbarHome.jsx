@@ -16,7 +16,7 @@ const NavbarHome = () => {
   };
 
   return (
-    <nav className="bg-indigo-800 h-[100px] flex justify-between items-center">
+    <nav className="bg-[#1c4355] h-[100px] flex justify-between items-center">
       <picture className="flex items-center">
         <img
           className="p-1 h-[150px] w-[150px] ml-2 cursor-pointer"

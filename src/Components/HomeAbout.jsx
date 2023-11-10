@@ -1,9 +1,10 @@
 import React from 'react';
 import NavbarHome from './NavbarHome';
+
 const HomeAbout = () => {
   return (
-    <main className="bg-white text-black h-screen">
-      <header>
+    <main className="bg-[#d3f5ff] text-black h-screen">
+      <header className="mb-4">
         <NavbarHome />
       </header>
       <article className="p-8 flex justify-center flex-col">
