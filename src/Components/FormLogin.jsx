@@ -8,7 +8,7 @@ import BackButton from './BackButton';
 import ButtonLogin from './ButtonLogin';
 import ButtonRegister from './ButtonRegister';
 
-const FormLogin = () => {
+const FormLogin = ({ handleLoginBackend }) => {
   const [usuario, setUsuario] = useState('');
   const [contraseña, setContraseña] = useState('');
   const navigate = useNavigate();
@@ -36,6 +36,7 @@ const FormLogin = () => {
       .then((resp) => {
         console.log(resp);
         localStorage.setItem('user', data.usuario);
+        handleLoginBackend(resp.data);
         navigate('/dashboard');
       })
       .catch((error) => {
