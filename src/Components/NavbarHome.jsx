@@ -27,19 +27,19 @@ const NavbarHome = () => {
       <div className="flex items-center">
         <div
           onClick={irHome}
-          className="text-white hover:underline mx-4 text-xl cursor-pointer font-semibold"
+          className="text-white hover:underline hover:decoration-[3px] mx-4 text-xl cursor-pointer font-semibold"
         >
           Home
         </div>
         <div
           onClick={irAbout}
-          className="text-white hover:underline mx-4 text-xl cursor-pointer font-semibold"
+          className="text-white hover:underline hover:decoration-[3px] mx-4 text-xl cursor-pointer font-semibold"
         >
           Acerca de Nosotros
         </div>
         <div
           onClick={irConstact}
-          className="text-white hover:underline mx-4 text-xl cursor-pointer font-semibold"
+          className="text-white hover:underline hover:decoration-[3px] mx-4 text-xl cursor-pointer font-semibold"
         >
           Contáctanos
         </div>
