@@ -11,4 +11,7 @@ th {
   left: -95px;
   background-color: #1c4355;
   --bs-dropdown-link-color: white;
+  --bs-dropdown-link-active-bg: #041c27;
+  --bs-dropdown-link-hover-bg: #183d4e;
+  --bs-dropdown-link-hover-color: white;
 }
