@@ -46,7 +46,7 @@ const NavbarHome = () => {
         </div>
         <Link
           to="/login"
-          className="bg-[#9df0ff] cursor-pointer transition-transform duration-300 ease-in hover:brightness-110 hover:scale-110 hover:shadow-md text-[#1c4355] font-bold py-2 px-4 ml-3 rounded "
+          className="bg-[#1ba0bf] cursor-pointer transition-transform duration-300 ease-in hover:brightness-110 hover:scale-110 hover:shadow-md text-white font-bold py-2 px-4 ml-3 rounded "
         >
           Iniciar sesión
         </Link>

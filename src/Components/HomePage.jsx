@@ -25,7 +25,7 @@ const HomePage = () => {
   };
 
   return (
-    <main className="bg-[#d3f5ff] text-black min-h-screen">
+    <main className="bg-[#eefbfd] text-[#0e2e3e] min-h-screen">
       <header className="mb-4">
         <NavbarHome />
       </header>
