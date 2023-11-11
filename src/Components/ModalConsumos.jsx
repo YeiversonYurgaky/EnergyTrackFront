@@ -14,9 +14,9 @@ const Modalconsumos = ({
   isUpdating,
 }) => {
   const [ConsuEnergi, setConsuEnergi] = useState('');
-  const [NumPiso, setNumPiso] = useState('');
+  const [NumPiso, setNumPiso] = useState('1');
   const [fecha, setFecha] = useState('');
-  const token = localStorage.getItem('token');
+
   const endPoint = isUpdating //si isUpdating se va al consumo de update, sino al de create
     ? Constantes.URL_BASE + '/consumos/actualizar/'
     : Constantes.URL_BASE + '/consumos/nuevos';
@@ -49,7 +49,10 @@ const Modalconsumos = ({
     const data = {
       numero_de_piso: NumPiso,
       consumo_energetico: ConsuEnergi,
+      fecha: fecha,
     };
+
+    console.log(data);
     await axios
       .post(endPoint, data)
       .then((resp) => {
@@ -78,9 +81,9 @@ const Modalconsumos = ({
         setNumPiso('');
       } //si es isUpdating, deja editar los datos, sino solo se añaden
     } else {
-      setFecha('Fecha hoy');
+      setFecha('');
       setConsuEnergi('');
-      setNumPiso('');
+      setNumPiso('1');
     }
   }, [show, isUpdating]);
 
@@ -96,11 +99,12 @@ const Modalconsumos = ({
           <div className="mb-3">
             <label className="form-label">Fecha</label>
             <input
-              type="text"
+              type="date"
+              name="fecha"
               className="form-control"
               aria-describedby="consumoHelp"
               onChange={(e) => {
-                setFecha(e.target.value);
+                setFecha(moment(e.target.value).format('YYYY-MM-DD'));
               }}
               value={fecha}
             />
@@ -121,9 +125,7 @@ const Modalconsumos = ({
             <label className="form-label">Piso</label>
             <Form.Select
               aria-label="Default select example"
-              onChange={(e) => {
-                setNumPiso(e.target.value);
-              }}
+              onChange={(e) => setNumPiso(e.target.value)}
               value={NumPiso}
             >
               <option value="1">Piso 1</option>

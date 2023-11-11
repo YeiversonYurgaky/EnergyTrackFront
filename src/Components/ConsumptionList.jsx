@@ -1,7 +1,6 @@
 import axios from 'axios';
 import moment from 'moment/moment';
 import React, { useEffect, useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import { BsDatabaseAdd } from 'react-icons/bs';
 import { FaUserEdit } from 'react-icons/fa';
@@ -42,7 +41,6 @@ const ConsumptionList = () => {
     await axios
       .get(endPoint)
       .then((resp) => {
-        console.log(resp);
         setData(resp.data.result);
       })
       .catch((err) => {
@@ -146,7 +144,7 @@ const ConsumptionList = () => {
             </th>
             <th>Número De Piso</th>
             <th className="flex items-center justify-center gap-2">
-              Consumo
+              Consumo (KWH)
               <div className="flex items-center justify-center">
                 <button
                   variant="warning"
@@ -162,12 +160,13 @@ const ConsumptionList = () => {
         </thead>
         <tbody>
           {data.map((consumo, index) => {
+            console.log(consumo);
             return (
               <tr key={consumo._id}>
                 <td>{index + 1}</td>
-                <td>{moment(consumo.fecha).format('DD-MM-YYYY')}</td>
+                <td>{moment(consumo.fecha).utc().format('DD-MM-YYYY')}</td>
                 <td>{consumo.numero_de_piso}</td>
-                <td>{consumo.consumo_energetico} KWH</td>
+                <td>{consumo.consumo_energetico}</td>
                 <td>
                   <div className="flex items-center justify-center">
                     <button
