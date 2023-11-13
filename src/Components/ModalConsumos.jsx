@@ -97,17 +97,19 @@ const Modalconsumos = ({
       <Modal.Body>
         <form>
           <div className="mb-3">
-            <label className="form-label">Fecha</label>
-            <input
-              type="date"
-              name="fecha"
-              className="form-control"
-              aria-describedby="consumoHelp"
-              onChange={(e) => {
-                setFecha(moment(e.target.value).format('YYYY-MM-DD'));
-              }}
-              value={fecha}
-            />
+            <label className="form-label">{isUpdating ? '' : 'Fecha'}</label>
+            {!isUpdating ? (
+              <input
+                type="date"
+                name="fecha"
+                className="form-control"
+                aria-describedby="consumoHelp"
+                onChange={(e) => {
+                  setFecha(e.target.value);
+                }}
+                value={fecha}
+              />
+            ) : null}
           </div>
           <div className="mb-3">
             <label className="form-label">Consumo Energético</label>

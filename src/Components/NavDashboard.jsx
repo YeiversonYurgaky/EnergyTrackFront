@@ -46,15 +46,13 @@ const UserDropdown = () => {
 
 const NavDashboard = () => {
   return (
-    <Navbar className="bg-[#1c4355] h-[100px]">
+    <Navbar className="bg-[#1c4355] h-[100px] flex gap-[20rem]">
       <img
         src={logo}
         alt="Logo"
         className="p-1 h-[150px] w-[150px] ml-2 cursor-pointer"
       />
-      <h1 className="text-white text-4xl ml-[22rem] mr-[22rem] font-bold">
-        Tabla de consumos
-      </h1>
+      <h1 className="text-white text-4xl font-bold">Tabla de consumos</h1>
       <Nav className="ms-auto">
         <UserDropdown />
       </Nav>

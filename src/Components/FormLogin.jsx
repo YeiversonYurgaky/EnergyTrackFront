@@ -37,6 +37,8 @@ const FormLogin = () => {
         console.log(resp);
         localStorage.setItem('token', resp.data.token);
         localStorage.setItem('user', data.usuario);
+        Swal.fire('Información!', 'Has Ingresado Exitosamente!', 'success');
+
         navigate('/dashboard');
       })
       .catch((error) => {
@@ -67,7 +69,7 @@ const FormLogin = () => {
             <p>
               Encontraras informacion actualizada para potenciar la eficiencia
               energetica de nuestra universidad. Unete a nosotros en este
-              emocionante reccorido hacia un campus mas sostenible.
+              emocionante recorrido hacia un campus mas sostenible.
             </p>
             <p>¡Nos complace mucho contar contigo!</p>
           </div>

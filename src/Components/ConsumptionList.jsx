@@ -15,6 +15,8 @@ const ConsumptionList = () => {
   const [data, setData] = useState([]);
   const MySwal = withReactContent(Swal);
 
+  const [guardarIndex, setGuardarIndex] = useState([]);
+
   const [selected, setSelected] = useState({});
 
   const [sortBy, setSortBy] = useState('asc');
@@ -42,6 +44,10 @@ const ConsumptionList = () => {
       .get(endPoint)
       .then((resp) => {
         setData(resp.data.result);
+        setGuardarIndex((prevDatos) => [
+          ...prevDatos,
+          { data: resp.data.result, currentIndex: null },
+        ]);
       })
       .catch((err) => {
         console.log(err);
@@ -59,10 +65,12 @@ const ConsumptionList = () => {
     handleConsumos();
   }, []);
 
-  const handleDelete = (element) => {
+  const handleDelete = (element, currentIndex) => {
     const endPoint = Constantes.URL_BASE + '/consumos/delete/';
     MySwal.fire({
-      title: `¿Está seguro de Eliminar al consumo ${element._id}?, Esta acción es irreversible!`,
+      title: `¿Está seguro de Eliminar el dato #${
+        currentIndex + 1
+      }?, Esta acción es irreversible!`,
       showCancelButton: true,
       confirmButtonText: 'Si',
     }).then(async (result) => {
@@ -160,7 +168,6 @@ const ConsumptionList = () => {
         </thead>
         <tbody>
           {data.map((consumo, index) => {
-            console.log(consumo);
             return (
               <tr key={consumo._id}>
                 <td>{index + 1}</td>
@@ -177,7 +184,7 @@ const ConsumptionList = () => {
                     </button>
                     <button
                       className="btn btn-danger w-10"
-                      onClick={() => handleDelete(consumo)}
+                      onClick={() => handleDelete(consumo, index)}
                     >
                       <MdDelete />
                     </button>

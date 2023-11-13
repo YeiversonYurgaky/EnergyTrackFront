@@ -1,121 +1,95 @@
 import React, { useEffect, useState } from 'react';
-import img1 from '../assets/carruimg1.avif';
-import img2 from '../assets/carruimg2.webp';
-import img3 from '../assets/carruimg3.jpg';
-
-import NavbarHome from './NavbarHome';
-
+import ahorro from '../assets/ahorro.jpg';
+import sensor from '../assets/sensor.jpg';
+import tiposSensor from '../assets/tiposSensor.jpeg';
+import ArticlesCards from './ArticlesCards';
 const HomePage = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [coloredText, setColoredText] = useState([]);
 
   useEffect(() => {
+    const text =
+      '¡Ilumina el camino hacia un futuro más sostenible con nosotros!';
+    const colors = ['text-green-700', 'text-[#EBBD01]', 'text-blue-800'];
+
     const interval = setInterval(() => {
-      handleNext();
-    }, 3000);
+      setColoredText(
+        text.split('').map((char, index) => (
+          <span key={index} className={colors[index % colors.length]}>
+            {char}
+          </span>
+        ))
+      );
+      colors.push(colors.shift());
+    }, 500);
 
     return () => clearInterval(interval);
-  }, [slideIndex]);
-
-  const handleNext = () => {
-    setSlideIndex((prev) => (prev + 1) % 3); // 3 es el número total de imágenes en el carrusel
-  };
-
-  const handlePrev = () => {
-    setSlideIndex((prev) => (prev - 1 + 3) % 3);
-  };
-
+  }, []);
   return (
-    <main className="bg-[#eefbfd] text-[#0e2e3e] min-h-screen">
-      <header className="mb-4">
-        <NavbarHome />
+    <main className=" text-[#0e2e3e]">
+      <header className="mt-10 flex gap-5 flex-col">
+        <h1 className="flex  text-5xl justify-center font-bold">
+          ¡Bienvenido a EnergyTrack!
+        </h1>
+        <p className="container text-xl text-center">
+          ¡Bienvenido a nuestro innovador sistema de gestión de consumos
+          energéticos!
+        </p>
+        <p className="container text-xl text-center">
+          Descubre cómo nuestras soluciones avanzadas revolucionan la eficiencia
+          lumínica, proporcionando un control preciso y análisis detallado para
+          optimizar el uso de la energía en iluminación.
+        </p>
+        <p className="container text-xl font-bold text-center">{coloredText}</p>
       </header>
-      <div className="p-4 flex items-center">
-        <div className="flex flex-col gap-3 w-2/3 pr-8">
-          <h1 className="text-[57px] font-bold">Bienvenido a EnergyTrack</h1>
-          <p className="text-lg font-semibold">
-            El ahorro de energía es crucial para reducir la huella ambiental y
-            promover la sostenibilidad a largo plazo. Al implementar prácticas
-            eficientes en la gestión de iluminación, podemos impactar
-            significativamente la conservación de recursos y la reducción de
-            costos.
-          </p>
-          <p className="text-lg font-semibold">
-            Nuestro sistema inteligente de seguimiento de consumo energético
-            proporciona una solución integral para monitorear y optimizar el uso
-            de la iluminación en entornos universitarios.
-          </p>
-          <p className="text-lg font-semibold">
-            EnergyTrack se compromete a facilitar la transición hacia prácticas
-            energéticas sostenibles, fomentando un entorno educativo más
-            respetuoso con el medio ambiente y económicamente eficiente.
-          </p>
-        </div>
-        <div className="w-1/2 shadow-lg">
-          <div
-            id="carouselExampleIndicators"
-            className="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <div className="carousel-inner">
-              <div
-                className={
-                  slideIndex === 0 ? 'carousel-item active' : 'carousel-item'
-                }
-              >
-                <img
-                  src={img1}
-                  className="d-block w-[700px] h-[400px] rounded"
-                  alt="imagen1"
-                />
-              </div>
-              <div
-                className={
-                  slideIndex === 1 ? 'carousel-item active' : 'carousel-item'
-                }
-              >
-                <img
-                  src={img2}
-                  className="d-block w-[700px] h-[400px] rounded"
-                  alt="imagen2"
-                />
-              </div>
-              <div
-                className={
-                  slideIndex === 2 ? 'carousel-item active' : 'carousel-item'
-                }
-              >
-                <img
-                  src={img3}
-                  className="d-block w-[700px] h-[400px] rounded"
-                  alt="imagen3"
-                />
-              </div>
-            </div>
-            <button
-              className="carousel-control-prev"
-              type="button"
-              onClick={handlePrev}
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              onClick={handleNext}
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </div>
+      <h2 className="flex text-5xl justify-center p-10 font-bold">
+        Articulos Relacionados
+      </h2>
+      <section className="flex justify-center pb-10">
+        <article className="flex gap-5">
+          <ArticlesCards
+            image={sensor}
+            imagealt={'sensor de movimiento'}
+            title={'Ahorra energía con los sensores de movimiento'}
+            text={
+              'Los sensores de movimiento pueden ayudarte a ahorrar en tu factura sin que tengas que hacer nada...'
+            }
+            buttonText={'Leer más'}
+            irArticle={
+              'https://www.endesa.com/es/la-cara-e/eficiencia-energetica/Ahorro-sensores-movimiento'
+            }
+          />
+
+          <ArticlesCards
+            image={ahorro}
+            imagealt={'ahorro de energia'}
+            title={
+              'Beneficios del ahorro energético: ¿por qué es importante ahorrar energía?'
+            }
+            text={
+              'Si pensamos como usuarios, está claro que ahorrar energía significa pagar menos...'
+            }
+            buttonText={'Leer más'}
+            irArticle={
+              'https://thenergia.com/beneficios-de-ahorrar-energia-electrica-por-que-es-importante-ahorrar-energia/'
+            }
+          />
+
+          <ArticlesCards
+            image={tiposSensor}
+            imagealt={'sensor de movimiento'}
+            title={
+              'Los mejores sensores de movimiento para ahorrar en la factura de la luz'
+            }
+            text={
+              'Te aconsejamos instalar uno de los sensores de movimiento si estás buscando ahorrar...'
+            }
+            buttonText={'Leer más'}
+            irArticle={
+              'https://www.elconfidencial.com/decompras/gadgets/2022-02-14/factura-luz-sensores-movimiento-ahorro_3312863/'
+            }
+          />
+        </article>
+      </section>
     </main>
   );
 };

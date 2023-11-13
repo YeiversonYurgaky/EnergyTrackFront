@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ConsumptionList from '../Components/ConsumptionList';
 import NavDashboard from '../Components/NavDashboard';
+import '../Styles/HomePage.css';
 
 const NavbarPage = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const NavbarPage = () => {
     }
   }, [navigate]);
   return (
-    <div className="bg-[#eefbfd] h-screen">
+    <div className="bg-color h-screen">
       <NavDashboard />
       <ConsumptionList />
     </div>
