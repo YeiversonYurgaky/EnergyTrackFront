@@ -25,7 +25,7 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <main className=" text-[#0e2e3e]">
+    <main className=" text-black">
       <header className="mt-10 flex gap-5 flex-col">
         <h1 className="flex  text-5xl justify-center font-bold">
           ¡Bienvenido a EnergyTrack!

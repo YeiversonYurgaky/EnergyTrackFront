@@ -14,20 +14,20 @@ const CarruselHomePage = () => {
   return (
     <Carousel fade activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item interval={4000}>
-        <img className="SlidesPics w-screen" src={img2} />
+        <img className="SlidesPics w-screen" src={img2} alt="carrusel imagen" />
         <Carousel.Caption>
-          <h3 className="slideName">
+          <h3 className="slideName text-black">
             ¿Quieres controlar el consumo energético de tus iluminarias y
             ahorrar energía?
           </h3>
-          <p className="slideText">
+          <p className="slideText text-black">
             Con EnergyTrack, podrás hacerlo usando nuestro sistema avanzado de
             monitoreo en tiempo real.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={4000}>
-        <img className="SlidesPics w-screen" src={img1} />
+        <img className="SlidesPics w-screen" src={img1} alt="carrusel imagen" />
         <Carousel.Caption>
           <h3 className="slideName">
             ¿Quieres reducir tu huella de carbono y contribuir al medio
@@ -39,12 +39,14 @@ const CarruselHomePage = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={4000}>
-        <img className="SlidesPics w-screen h-[700px]" src={img3} />
+        <img
+          className="SlidesPics w-screen h-[700px]"
+          src={img3}
+          alt="carrusel imagen"
+        />
         <Carousel.Caption>
-          <h3 className="slideName leading-tight">
-            ¿Quieres ahorrar costes en tu empresa?
-          </h3>
-          <p className="slideText leading-tight">
+          <h3 className="slideName">¿Quieres ahorrar costes en tu empresa?</h3>
+          <p className="slideText">
             EnergyTrack también te ayuda a optimizar el rendimiento de tus
             instalaciones, para que consuman menos energía y duren más.
           </p>

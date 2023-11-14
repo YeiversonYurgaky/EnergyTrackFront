@@ -50,7 +50,7 @@ const NavDashboard = () => {
       <img
         src={logo}
         alt="Logo"
-        className="p-1 h-[150px] w-[150px] ml-2 cursor-pointer"
+        className="p-1h-[142px] w-[142px] ml-2 cursor-pointer"
       />
       <h1 className="text-white text-4xl font-bold">Tabla de consumos</h1>
       <Nav className="ms-auto">

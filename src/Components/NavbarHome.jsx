@@ -21,7 +21,7 @@ const NavbarHome = () => {
       <picture className="flex items-center">
         <button onClick={irHome}>
           <img
-            className="p-1 h-[150px] w-[150px] ml-2 cursor-pointer"
+            className="p-1 h-[145px] w-[145px] ml-2 cursor-pointer"
             src={logo}
             alt="logo"
           />
