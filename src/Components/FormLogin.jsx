@@ -96,15 +96,25 @@ const FormLogin = () => {
                 />
               </div>
               <div>
-                <input
-                  type={mostrarContraseña ? 'text' : 'password'}
-                  id="password"
-                  value={contraseña}
-                  onChange={(e) => setContraseña(e.target.value)}
-                />
+                {mostrarContraseña ? (
+                  <input
+                    type="text"
+                    id="password"
+                    value={contraseña}
+                    onChange={(e) => setContraseña(e.target.value)}
+                  />
+                ) : (
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Contraseña"
+                    value={contraseña}
+                    onChange={(e) => setContraseña(e.target.value)}
+                  />
+                )}
                 <button
-                  className="text-xs text-gray-500 mt-1 no-underline flex hover:text-[#1c4355]"
                   type="button"
+                  className="text-xs text-gray-500 mt-1 no-underline flex hover:text-[#1c4355]"
                   onClick={handleToggleMostrarContraseña}
                 >
                   {mostrarContraseña ? 'Ocultar' : 'Mostrar'} Contraseña
