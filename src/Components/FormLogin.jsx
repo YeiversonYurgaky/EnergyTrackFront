@@ -11,6 +11,13 @@ import ButtonRegister from './ButtonRegister';
 const FormLogin = () => {
   const [usuario, setUsuario] = useState('');
   const [contraseña, setContraseña] = useState('');
+
+  const [mostrarContraseña, setMostrarContraseña] = useState(false);
+
+  const handleToggleMostrarContraseña = () => {
+    setMostrarContraseña(!mostrarContraseña);
+  };
+
   const navigate = useNavigate();
   const irRegistrar = () => {
     navigate('/register');
@@ -90,15 +97,21 @@ const FormLogin = () => {
               </div>
               <div>
                 <input
-                  onChange={(e) => {
-                    setContraseña(e.target.value);
-                  }}
-                  type="password"
-                  placeholder="Contraseña"
+                  type={mostrarContraseña ? 'text' : 'password'}
+                  id="password"
+                  value={contraseña}
+                  onChange={(e) => setContraseña(e.target.value)}
                 />
+                <button
+                  className="text-xs text-gray-500 mt-1 no-underline flex hover:text-[#1c4355]"
+                  type="button"
+                  onClick={handleToggleMostrarContraseña}
+                >
+                  {mostrarContraseña ? 'Ocultar' : 'Mostrar'} Contraseña
+                </button>
               </div>
               <a
-                className="password-recover cursor-pointer"
+                className="password-recover mt-3 cursor-pointer"
                 onClick={irPassword}
               >
                 Recuperar contraseña
