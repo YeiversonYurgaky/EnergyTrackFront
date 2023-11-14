@@ -17,11 +17,11 @@ const NavbarHome = () => {
   };
 
   return (
-    <nav className="bg-[#1c4355] h-[100px] flex justify-between items-center">
+    <nav className="bg-[#1c4355] h-[90px] flex justify-between items-center">
       <picture className="flex items-center">
         <button onClick={irHome}>
           <img
-            className="p-1 h-[145px] w-[145px] ml-2 cursor-pointer"
+            className="p-1 h-[140px] w-[140px] ml-2 cursor-pointer"
             src={logo}
             alt="logo"
           />
